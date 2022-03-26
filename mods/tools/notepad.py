@@ -7,4 +7,4 @@ def run():
         [sg.Multiline('', s=(30, 30))]
     ]
 
-    return sg.Window('', layout, finalize=True)
+    return sg.Window('NotePad', layout, finalize=True)

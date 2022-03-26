@@ -1,10 +1,13 @@
 import urllib3
+import getpass
 
 http = urllib3.PoolManager()
 
+
+
 def load_words(size):
-    words = http.request('GET', 'https://gemgames.w3spaces.com/CodeRandom2/words_alpha.txt')
-    words = eval(words.data)
+    with open('C:/Users/{user}/Documents/GEM Games/CodeRandom2/words_alpha.txt'.format(user=getpass.getuser())) as word_file:
+        words = set(word_file.read().split())
 
     valid_words = []
     for word in words:

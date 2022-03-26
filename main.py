@@ -1,18 +1,30 @@
-import PySimpleGUI as sg
 import random as r
-
-import os
-import string
 import time
-import urllib3
 import webbrowser
+import getpass
 
+import PySimpleGUI as sg
+import urllib3
+
+import mods.cipher as cipher
 import mods.levels as levels
 import mods.load_words as load_words
-import mods.cipher as cipher
 import mods.tools.autokey as autokey
-import mods.tools.tap as tap
 import mods.tools.notepad as notepad
+import mods.tools.tap as tap
+import mods.download
+import mods.music as music
+
+# Get Profile Name
+user = getpass.getuser()
+
+
+
+# Music Channels
+bg = music.init(0)
+sfx = music.init(1)
+
+music.volume(sfx, )
 
 # Set up Web Browser
 http = urllib3.PoolManager()
@@ -29,7 +41,8 @@ dev = levels.get()
 level_names = levels.get(dev)
 
 menu_layout_left = [
-    [sg.Frame('Play', [[sg.Listbox(levels.levels(level_names), s=(24, 10), default_values='Intro', k='level_select')], [sg.Text('')], [sg.Button('Play', s=(25, 2))]], s=(320, 480))]
+    [sg.Frame('Play', [[sg.Listbox(levels.levels(level_names), s=(24, 10), default_values='Intro', k='level_select')],
+                       [sg.Text('')], [sg.Button('Play', s=(25, 2))]], s=(320, 480))]
 ]
 
 menu_layout_right = [
@@ -44,11 +57,11 @@ menu_layout = [
 # Puzzle Layouts
 
 tool_layout = [
-    [sg.Button('NotePad', disabled=not dev)],
+    [sg.Button('NotePad')],
     [sg.Button('ScratchPad', disabled=not dev)],
     [sg.Text('')],
     [sg.Button('Autokey Table')],
-    [sg.Button('Tap Code', disabled=not dev)]
+    [sg.Button('Tap Code')]
 ]
 
 layout_puzzle_left = [
@@ -68,7 +81,9 @@ puzzle_layout = [
 
 sg.theme('DarkGreen1')
 win_layout = [
-    [sg.Frame('', [[sg.Text('You Win!', font='Veranda 48 bold')],[sg.Text('')],[sg.Button('Menu')],[sg.Button('Quit')]], s=(630, 470), element_justification='center')]]
+    [sg.Frame('',
+              [[sg.Text('You Win!', font='Veranda 48 bold')], [sg.Text('')], [sg.Button('Menu')], [sg.Button('Quit')]],
+              s=(630, 470), element_justification='center')]]
 
 sg.theme('DarkGrey14')
 layout = [
@@ -120,6 +135,7 @@ while True:
                 wn['w'].Update(visible=True)
                 hints = ''
                 wn['hints'].Update(value=hints)
+                wn['guess'].Update(value=hints)
 
         if event == 'About':
             webbrowser.open('https://gemgames.w3spaces.com/CodeRandom2/help.html')
@@ -129,22 +145,25 @@ while True:
             tapCode = tap.run()
         if event == 'NotePad':
             notes = notepad.run()
-            print('GO GO GO')
 
     try:
         if window == notes:
 
             if event in (None, 'Quit'):
                 notes.close()
-        if window == autokeyTable:
-
-            if event in (None, 'Quit'):
-                autokeyTable.close()
-        if window == tapCode:
-
-            if event in (None, 'Quit'):
-                tapCode.close()
     except NameError:
-        pass
+        try:
+            if window == autokeyTable:
+
+                if event in (None, 'Quit'):
+                    autokeyTable.close()
+        except NameError:
+            try:
+                if window == tapCode:
+
+                    if event in (None, 'Quit'):
+                        tapCode.close()
+            except NameError:
+                pass
 
 wn.close()

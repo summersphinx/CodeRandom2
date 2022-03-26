@@ -1,6 +1,7 @@
 import urllib3
 from socket import gethostname
 import PySimpleGUI as sg
+import requests
 
 http = urllib3.PoolManager()
 
@@ -8,9 +9,9 @@ http = urllib3.PoolManager()
 def get(*dev):
     try:
         if dev[0]:
-            grabbed_levels = http.request('GET', 'https://gemgames.w3spaces.com/CodeRandom2/dev-levels.txt')
+            grabbed_levels = http.request('GET', 'https://raw.githubusercontent.com/summersphinx/CodeRandom-Stuff/main/2/levels.txt')
         else:
-            grabbed_levels = http.request('GET', 'https://gemgames.w3spaces.com/CodeRandom2/levels.txt')
+            grabbed_levels = http.request('GET', 'https://raw.githubusercontent.com/summersphinx/CodeRandom-Stuff/main/2/levels.txt')
         return eval(grabbed_levels.data)
     except IndexError:
         h_name = gethostname()

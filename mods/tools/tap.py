@@ -18,4 +18,4 @@ def run():
 
     notes_layout = [[sg.Text(table)]]
 
-    return sg.Window('Autokey Table', notes_layout, finalize=True)
+    return sg.Window('Tap Code', notes_layout, finalize=True)

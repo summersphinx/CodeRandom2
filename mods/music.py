@@ -4,41 +4,70 @@ import getpass
 import zipfile
 import wget
 import os
+from shutil import copytree, rmtree
+from PySimpleGUI import popup_notify
+
+if os.getcwd().endswith('\\mods'):
+    dir_path = os.getcwd()
+else:
+    dir_path = os.getcwd() + '/mods'
 
 user = getpass.getuser()
 
-url = 'https://www.mediafire.com/file/ik6hn0bub76crcl/bg.zip/file'
+url = 'https://github.com/summersphinx/CodeRandom2/raw/main/mods/bg.zip'
 
-# , 'C:/Users/' + user + '/Music/CodeRandom/bg.zip'
-wget.download(url)
-zipfile.is_zipfile(os.getcwd() + '/bg.zip')
-with zipfile.ZipFile(os.getcwd() + '/bg.zip', 'r') as zip:
-    zip.printdir()
-    zip.extractall()
-
+if not os.path.isdir('C:/Users/' + user + '/Music/GEM Games/CodeRandom/'):
+    popup_notify('Getting Things Ready', title='Music', display_duration_in_ms=3000)
+    wget.download(url)
+    zipfile.is_zipfile(dir_path + '/bg.zip')
+    with zipfile.ZipFile(dir_path + '/bg.zip', 'r') as ZIP:
+        ZIP.printdir()
+        ZIP.extractall()
+    copytree(dir_path + '/bg', 'C:/Users/' + user + '/Music/GEM Games/CodeRandom/')
+    os.remove(dir_path + '/bg.zip')
+    rmtree(dir_path + '/bg')
 
 mixer.init()
 
 
+def init(channel):
+    return mixer.Channel(channel)
+
+
+songs = os.listdir('C:/Users/' + user + '/Music/GEM Games/CodeRandom/')
+print(songs)
+
+
 def shuffle(channel):
-    mixer.music.unload()
+    channel.music.unload()
+    channel.music.play(r.choice(songs))
 
 
 def play(channel):
-    mixer.music.play()
+    channel.music.play()
 
 
 def pause(channel):
-    mixer.music.pause()
+    channel.music.pause()
 
 
-def quit():
-    mixer.quit()
+def quit(channel):
+    channel.quit()
 
 
 def volume(channel, *v):
     try:
         vol = v[0]
-        mixer.music.set_volume(vol / 10)
+        channel.set_volume(vol / 10)
     except IndexError:
-        return mixer.music.get_volume()
+        return channel.get_volume()
+
+
+def music():
+    return os.listdir('C:/Users/' + user + '/Music/CodeRandom/')
+
+
+test = init(0)
+print(volume(test))
+volume(test, 12)
+print(volume(test))
