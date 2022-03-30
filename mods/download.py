@@ -47,13 +47,3 @@ else:
             a = open('C:/Users/' + user + '/AppData/Local/GEM Games/CodeRandom2/last_day.txt', 'w')
             a.write(str(date.today()))
             a.close()
-        if len(os.listdir('C:/Users/' + user + '/Music/GEM Games/CodeRandom')) <= 0:
-            popup_notify('Setting the Stage', title='Music', display_duration_in_ms=3000)
-            wget.download('https://github.com/summersphinx/CodeRandom2/raw/main/mods/bg.zip')
-            zipfile.is_zipfile(os.getcwd() + '/bg.zip')
-            with zipfile.ZipFile(os.getcwd() + '/bg.zip', 'r') as ZIP:
-                ZIP.printdir()
-                ZIP.extractall()
-            copytree(os.getcwd() + '/bg', 'C:/Users/' + user + '/Music/GEM Games/CodeRandom/', dirs_exist_ok=True)
-            os.remove(os.getcwd() + '/bg.zip')
-            rmtree(os.getcwd() + '/bg')

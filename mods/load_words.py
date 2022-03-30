@@ -6,7 +6,7 @@ http = urllib3.PoolManager()
 
 
 def load_words(size):
-    with open('C:/Users/{user}/Documents/GEM Games/CodeRandom2/words_alpha.txt'.format(user=getpass.getuser())) as word_file:
+    with open('C:/Users/{user}/AppData/Local/GEM Games/CodeRandom2/words_alpha.txt'.format(user=getpass.getuser())) as word_file:
         words = set(word_file.read().split())
 
     valid_words = []
