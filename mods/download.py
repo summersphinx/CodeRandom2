@@ -47,3 +47,26 @@ else:
             a = open('C:/Users/' + user + '/AppData/Local/GEM Games/CodeRandom2/last_day.txt', 'w')
             a.write(str(date.today()))
             a.close()
+
+songs = ['A Darker Kind Of Grid.mp3', 'Intro.mp3', 'Loading.mp3']
+
+if not os.path.isdir('C:/Users/' + user + '/Music/GEM Games/CodeRandom/'):
+    popup_notify('Getting Things Ready', title='Music', display_duration_in_ms=3000)
+    os.makedirs('C:/Users/' + user + '/Music/GEM Games/CodeRandom/')
+
+if len(os.listdir('C:/Users/' + user + '/Music/GEM Games/CodeRandom/')) <= 0:
+    popup_notify('Setting the Stage', title='Music', display_duration_in_ms=3000)
+    for each in songs:
+        wget.download('https://github.com/summersphinx/CodeRandom-Stuff/raw/main/Music/' + each,
+                      'C:/Users/' + user + '/Music/GEM Games/CodeRandom/' + each)
+
+sounds = ['lose.wav', 'menu.wav', 'settings.wav', 'start.wav', 'win.wav']
+
+if not os.path.isdir('C:/Users/' + user + '/AppData/Local/GEM Games/CodeRandom2/sfx/'):
+    popup_notify('Getting Things Ready', title='Music', display_duration_in_ms=3000)
+    os.makedirs('C:/Users/' + user + '/AppData/Local/GEM Games/CodeRandom2/sfx/')
+
+if len(os.listdir('C:/Users/' + user + '/AppData/Local/GEM Games/CodeRandom2/sfx/')) <= 0:
+    popup_notify('Getting the Special Stuff', title='Sound', display_duration_in_ms=3000)
+    for each in sounds:
+        wget.download('https://github.com/summersphinx/CodeRandom-Stuff/raw/main/2/sfx/' + each, 'C:/Users/' + user + '/AppData/Local/GEM Games/CodeRandom2/sfx/' + each)

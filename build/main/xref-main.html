@@ -157,13 +157,16 @@ imports:
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#mods.cipher">mods.cipher</a>
+ &#8226;   <a href="#mods.download">mods.download</a>
  &#8226;   <a href="#mods.levels">mods.levels</a>
  &#8226;   <a href="#mods.load_words">mods.load_words</a>
- &#8226;   <a href="#mods.music">mods.music</a>
+ &#8226;   <a href="#mods.settings">mods.settings</a>
  &#8226;   <a href="#mods.tools.autokey">mods.tools.autokey</a>
  &#8226;   <a href="#mods.tools.notepad">mods.tools.notepad</a>
  &#8226;   <a href="#mods.tools.tap">mods.tools.tap</a>
  &#8226;   <a href="#operator">operator</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pygame.mixer">pygame.mixer</a>
  &#8226;   <a href="#pyi_rth__tkinter.py">pyi_rth__tkinter.py</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
@@ -552,8 +555,8 @@ imports:
 imported by:
     <a href="#PySimpleGUI.PySimpleGUI">PySimpleGUI.PySimpleGUI</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#mods.download">mods.download</a>
  &#8226;   <a href="#mods.levels">mods.levels</a>
- &#8226;   <a href="#mods.music">mods.music</a>
  &#8226;   <a href="#mods.tools.autokey">mods.tools.autokey</a>
  &#8226;   <a href="#mods.tools.notepad">mods.tools.notepad</a>
  &#8226;   <a href="#mods.tools.tap">mods.tools.tap</a>
@@ -4029,6 +4032,7 @@ imported by:
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#http.server">http.server</a>
+ &#8226;   <a href="#mods.download">mods.download</a>
  &#8226;   <a href="#pkg_resources._vendor.pyparsing">pkg_resources._vendor.pyparsing</a>
  &#8226;   <a href="#plistlib">plistlib</a>
  &#8226;   <a href="#requests.models">requests.models</a>
@@ -7438,8 +7442,9 @@ imports:
   <div class="import">
 imported by:
     <a href="#main.py">main.py</a>
+ &#8226;   <a href="#mods.download">mods.download</a>
  &#8226;   <a href="#mods.load_words">mods.load_words</a>
- &#8226;   <a href="#mods.music">mods.music</a>
+ &#8226;   <a href="#mods.settings">mods.settings</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
   </div>
@@ -8973,9 +8978,10 @@ imported by:
 <span class="moduletype">Package</span>  <div class="import">
 imported by:
     <a href="#mods.cipher">mods.cipher</a>
+ &#8226;   <a href="#mods.download">mods.download</a>
  &#8226;   <a href="#mods.levels">mods.levels</a>
  &#8226;   <a href="#mods.load_words">mods.load_words</a>
- &#8226;   <a href="#mods.music">mods.music</a>
+ &#8226;   <a href="#mods.settings">mods.settings</a>
  &#8226;   <a href="#mods.tools">mods.tools</a>
 
   </div>
@@ -8991,6 +8997,29 @@ imports:
  &#8226;   <a href="#pycipher">pycipher</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#string">string</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="mods.download"></a>
+  <a target="code" href="///E:/Github/CodeRandom2/mods/download.py" type="text/plain"><tt>mods.download</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PySimpleGUI">PySimpleGUI</a>
+ &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#getpass">getpass</a>
+ &#8226;   <a href="#mods">mods</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#wget">wget</a>
+ &#8226;   <a href="#zipfile">zipfile</a>
 
   </div>
   <div class="import">
@@ -9040,17 +9069,15 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="mods.music"></a>
-  <a target="code" href="///E:/Github/CodeRandom2/mods/music/__init__.py" type="text/plain"><tt>mods.music</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
+  <a name="mods.settings"></a>
+  <a target="code" href="///E:/Github/CodeRandom2/mods/settings.py" type="text/plain"><tt>mods.settings</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#PySimpleGUI">PySimpleGUI</a>
- &#8226;   <a href="#getpass">getpass</a>
+    <a href="#getpass">getpass</a>
  &#8226;   <a href="#mods">mods</a>
  &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#pygame">pygame</a>
- &#8226;   <a href="#pygame.mixer">pygame.mixer</a>
- &#8226;   <a href="#random">random</a>
+ &#8226;   <a href="#pickle">pickle</a>
+ &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#wget">wget</a>
 
   </div>
@@ -10285,8 +10312,10 @@ imported by:
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#lzma">lzma</a>
+ &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
- &#8226;   <a href="#mods.music">mods.music</a>
+ &#8226;   <a href="#mods.download">mods.download</a>
+ &#8226;   <a href="#mods.settings">mods.settings</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.context">multiprocessing.context</a>
  &#8226;   <a href="#multiprocessing.forkserver">multiprocessing.forkserver</a>
@@ -10488,6 +10517,7 @@ imported by:
     <a href="#PySimpleGUI.PySimpleGUI">PySimpleGUI.PySimpleGUI</a>
  &#8226;   <a href="#lib2to3.pgen2.grammar">lib2to3.pgen2.grammar</a>
  &#8226;   <a href="#logging">logging</a>
+ &#8226;   <a href="#mods.settings">mods.settings</a>
  &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#tracemalloc">tracemalloc</a>
 
@@ -11827,8 +11857,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#mods.music">mods.music</a>
- &#8226;   <a href="#pygame._freetype">pygame._freetype</a>
+    <a href="#pygame._freetype">pygame._freetype</a>
  &#8226;   <a href="#pygame.base">pygame.base</a>
  &#8226;   <a href="#pygame.bufferproxy">pygame.bufferproxy</a>
  &#8226;   <a href="#pygame.color">pygame.color</a>
@@ -12214,7 +12243,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#mods.music">mods.music</a>
+    <a href="#main.py">main.py</a>
  &#8226;   <a href="#pygame">pygame</a>
  &#8226;   <a href="#pygame.sndarray">pygame.sndarray</a>
 
@@ -12704,7 +12733,6 @@ imported by:
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#mods.cipher">mods.cipher</a>
- &#8226;   <a href="#mods.music">mods.music</a>
  &#8226;   <a href="#secrets">secrets</a>
  &#8226;   <a href="#statistics">statistics</a>
  &#8226;   <a href="#tempfile">tempfile</a>
@@ -13518,6 +13546,8 @@ imported by:
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#http.server">http.server</a>
+ &#8226;   <a href="#mods.download">mods.download</a>
+ &#8226;   <a href="#mods.settings">mods.settings</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#pyperclip">pyperclip</a>
  &#8226;   <a href="#tarfile">tarfile</a>
@@ -16700,7 +16730,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#mods.music">mods.music</a>
+    <a href="#mods.download">mods.download</a>
+ &#8226;   <a href="#mods.settings">mods.settings</a>
 
   </div>
 
@@ -17140,6 +17171,7 @@ imported by:
  &#8226;   <a href="#PyInstaller.lib.modulegraph.zipio">PyInstaller.lib.modulegraph.zipio</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.readers">importlib.readers</a>
+ &#8226;   <a href="#mods.download">mods.download</a>
  &#8226;   <a href="#pkg_resources">pkg_resources</a>
  &#8226;   <a href="#requests.utils">requests.utils</a>
  &#8226;   <a href="#shutil">shutil</a>
